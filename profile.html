@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TASAN WIN - Profile</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0b0b0b;
+color:white;
+padding:20px;
+}
+
+.header{
+text-align:center;
+padding:20px;
+background:linear-gradient(90deg,#000,#b8860b);
+border-radius:15px;
+color:gold;
+}
+
+.profile-card{
+margin-top:20px;
+background:#181818;
+border:2px solid gold;
+border-radius:15px;
+padding:20px;
+text-align:center;
+}
+
+.profile-img{
+width:100px;
+height:100px;
+border-radius:50%;
+border:3px solid gold;
+margin-bottom:15px;
+}
+
+.info{
+margin-top:15px;
+padding:12px;
+background:#111;
+border-radius:10px;
+font-size:18px;
+}
+
+.btn{
+width:100%;
+padding:15px;
+margin-top:15px;
+background:gold;
+color:black;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+<h1>👤 My Profile</h1>
+</div>
+
+<div class="profile-card">
+
+<img src="https://picsum.photos/200" class="profile-img">
+
+<h2>VIP User</h2>
+
+<div class="info">
+📱 Mobile : 9999999999
+</div>
+
+<div class="info">
+💰 Wallet : 0 Points
+</div>
+
+<div class="info">
+🏆 Level : Gold Member
+</div>
+<button class="btn" onclick="editProfile()">
+✏️ EDIT PROFILE
+</button>
+
+<button class="btn" onclick="logoutUser()">
+🚪 LOGOUT
+</button>
+
+<button class="btn" onclick="location.href='wallet.html'">
+💰 WALLET
+</button>
+
+<button class="btn" onclick="location.href='index.html'">
+🏠 HOME
+</button>
+
+</div>
+
+<script>
+
+function editProfile(){
+
+alert("✏️ Edit Profile Feature Coming Soon!");
+
+}
+
+function logoutUser(){
+
+if(confirm("Are you sure you want to logout?")){
+
+alert("✅ Logout Successful");
+
+window.location.href="login.html";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
