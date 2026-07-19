@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TASAN WIN - Lucky Spin</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0b0b0b;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+.header{
+background:linear-gradient(90deg,#000,#b8860b);
+padding:20px;
+border-radius:15px;
+color:gold;
+margin-bottom:20px;
+}
+
+.wheel{
+width:220px;
+height:220px;
+border:8px solid gold;
+border-radius:50%;
+margin:30px auto;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:70px;
+background:#181818;
+transition:transform 4s ease;
+}
+
+.result{
+font-size:24px;
+color:gold;
+margin:20px 0;
+min-height:35px;
+}
+
+.btn{
+width:100%;
+padding:15px;
+margin-top:15px;
+background:gold;
+color:black;
+border:none;
+border-radius:10px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+<h1>🎡 LUCKY SPIN</h1>
+</div>
+
+<div class="wheel" id="wheel">
+🎁
+</div>
+
+<div class="result" id="result">
+Press SPIN
+</div>
+
+<button class="btn" onclick="spinWheel()">
+🎡 SPIN NOW
+</button>
+<button class="btn" onclick="location.href='index.html'">
+🏠 HOME
+</button>
+
+</div>
+
+<script>
+
+let spinning = false;
+
+const prizes = [
+"🎁 +10 Points",
+"🎉 +20 Points",
+"💰 +50 Points",
+"🏆 +100 Points",
+"👑 +500 Points",
+"⭐ Better Luck Next Time"
+];
+
+function spinWheel(){
+
+if(spinning) return;
+
+spinning = true;
+
+let wheel = document.getElementById("wheel");
+let result = document.getElementById("result");
+
+// Wheel को घुमाओ
+let rotate = 1800 + Math.floor(Math.random()*1800);
+
+wheel.style.transform = "rotate(" + rotate + "deg)";
+
+result.innerHTML = "🎡 Spinning...";
+
+setTimeout(function(){
+
+let prize = prizes[Math.floor(Math.random()*prizes.length)];
+
+result.innerHTML = "🎉 Congratulations!<br>" + prize;
+
+spinning = false;
+
+},4000);
+
+}
+
+</script>
+
+</body>
+</html>
