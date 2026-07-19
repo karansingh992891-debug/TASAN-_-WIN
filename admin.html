@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TASAN WIN - Admin Panel</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0b0b0b;
+color:white;
+padding:20px;
+}
+
+.header{
+background:linear-gradient(90deg,#000,#b8860b);
+padding:20px;
+text-align:center;
+color:gold;
+border-radius:15px;
+margin-bottom:20px;
+}
+
+.card{
+background:#181818;
+border:2px solid gold;
+border-radius:15px;
+padding:20px;
+margin-bottom:20px;
+text-align:center;
+}
+
+.card h2{
+color:gold;
+margin-bottom:10px;
+}
+
+.number{
+font-size:35px;
+font-weight:bold;
+color:white;
+}
+
+.btn{
+width:100%;
+padding:15px;
+margin-top:15px;
+background:gold;
+color:black;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+<h1>⚙️ ADMIN PANEL</h1>
+<p>TASAN WIN Dashboard</p>
+</div>
+
+<div class="card">
+<h2>👥 Total Users</h2>
+<div class="number">12,540</div>
+</div>
+
+<div class="card">
+<h2>🎮 Total Games</h2>
+<div class="number">4</div>
+</div>
+
+<div class="card">
+<h2>🏆 Total Winners</h2>
+<div class="number">2,450</div>
+</div>
+
+<div class="card">
+<h2>💰 Total Virtual Points</h2>
+<div class="number">9,99,999</div>
+</div>
+<button class="btn" onclick="refreshDashboard()">
+🔄 REFRESH DASHBOARD
+</button>
+
+<button class="btn" onclick="location.href='index.html'">
+🏠 HOME
+</button>
+
+<button class="btn" onclick="logoutAdmin()">
+🚪 LOGOUT
+</button>
+
+<script>
+
+function refreshDashboard(){
+
+alert("✅ Dashboard Refreshed Successfully!");
+
+}
+
+function logoutAdmin(){
+
+if(confirm("Are you sure you want to logout?")){
+
+alert("👋 Admin Logged Out");
+
+window.location.href="login.html";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
