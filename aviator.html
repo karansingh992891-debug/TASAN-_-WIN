@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TASAN WIN - Aviator</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0b0b0b;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+.header{
+background:linear-gradient(90deg,#000,#b8860b);
+padding:20px;
+border-radius:15px;
+color:gold;
+margin-bottom:20px;
+}
+
+.game-box{
+background:#181818;
+border:2px solid gold;
+border-radius:20px;
+padding:30px;
+max-width:400px;
+margin:auto;
+}
+
+#plane{
+font-size:70px;
+margin:20px 0;
+}
+
+#multiplier{
+font-size:48px;
+color:gold;
+font-weight:bold;
+margin:20px 0;
+}
+
+#status{
+font-size:22px;
+color:white;
+margin-bottom:20px;
+min-height:30px;
+}
+
+.btn{
+width:100%;
+padding:15px;
+margin-top:15px;
+background:gold;
+color:black;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+<h1>✈️ TASAN WIN AVIATOR</h1>
+</div>
+
+<div class="game-box">
+
+<div id="plane">✈️</div>
+
+<div id="multiplier">1.00x</div>
+
+<div id="status">
+Press START
+</div>
+
+<button class="btn" onclick="startDemo()">
+🚀 START DEMO
+</button>
+<button class="btn" onclick="location.href='index.html'">
+🏠 HOME
+</button>
+
+</div>
+
+<script>
+
+let timer;
+
+function startDemo(){
+
+clearInterval(timer);
+
+let value = 1.00;
+
+// 1.00x से 5.00x तक Random Crash
+let stopAt = +(Math.random() * 4 + 1).toFixed(2);
+
+document.getElementById("multiplier").innerHTML="1.00x";
+document.getElementById("status").innerHTML="✈️ Flight Running...";
+
+timer = setInterval(function(){
+
+value += 0.05;
+
+document.getElementById("multiplier").innerHTML =
+value.toFixed(2) + "x";
+
+// Plane थोड़ा उड़ता हुआ दिखे
+document.getElementById("plane").style.transform =
+"translateX(" + (value*15) + "px)";
+
+if(value >= stopAt){
+
+clearInterval(timer);
+
+document.getElementById("status").innerHTML =
+"💥 Flight Crashed at " + value.toFixed(2) + "x";
+
+document.getElementById("plane").style.transform =
+"translateX(0px)";
+
+}
+
+},100);
+
+}
+
+</script>
+
+</body>
+</html>
