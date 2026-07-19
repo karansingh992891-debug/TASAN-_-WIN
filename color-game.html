@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TASAN WIN - Color Game</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0b0b0b;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.header{
+background:linear-gradient(90deg,#000,#b8860b);
+padding:20px;
+border-radius:15px;
+color:gold;
+margin-bottom:20px;
+}
+
+.timer{
+font-size:40px;
+color:gold;
+margin:20px 0;
+font-weight:bold;
+}
+
+.result{
+font-size:35px;
+margin:20px 0;
+padding:20px;
+border:2px solid gold;
+border-radius:15px;
+background:#181818;
+}
+
+.colors{
+display:flex;
+justify-content:space-around;
+margin:25px 0;
+}
+
+.color{
+width:90px;
+height:90px;
+border-radius:50%;
+font-size:40px;
+display:flex;
+align-items:center;
+justify-content:center;
+border:3px solid gold;
+background:#111;
+}
+
+.btn{
+width:100%;
+padding:15px;
+background:gold;
+color:black;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:10px;
+margin-top:20px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+<h1>🎨 COLOR PREDICTION</h1>
+</div>
+
+<div class="timer">
+⏰ <span id="timer">30</span>
+</div>
+
+<div class="result" id="result">
+Waiting...
+</div>
+
+<div class="colors">
+
+<div class="color">🟢</div>
+
+<div class="color">🔴</div>
+
+<div class="color">🟣</div>
+
+</div>
+
+<button class="btn" onclick="startGame()">
+▶ START GAME
+</button>
+<button class="btn" onclick="location.href='index.html'">
+🏠 HOME
+</button>
+
+<script>
+
+let time = 30;
+let timer;
+
+const colors = [
+"🟢 GREEN",
+"🔴 RED",
+"🟣 VIOLET"
+];
+
+function startGame(){
+
+clearInterval(timer);
+
+time = 30;
+
+document.getElementById("timer").innerHTML = time;
+document.getElementById("result").innerHTML = "⏳ Waiting...";
+
+timer = setInterval(function(){
+
+time--;
+
+document.getElementById("timer").innerHTML = time;
+
+if(time <= 0){
+
+clearInterval(timer);
+
+let random = colors[Math.floor(Math.random()*colors.length)];
+
+document.getElementById("result").innerHTML =
+"🎯 Result : " + random;
+
+// 3 सेकंड बाद अगला राउंड
+setTimeout(function(){
+
+startGame();
+
+},3000);
+
+}
+
+},1000);
+
+}
+
+// पेज खुलते ही गेम शुरू
+startGame();
+
+</script>
+
+</body>
+</html>
