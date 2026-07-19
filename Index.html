@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TASAN WIN</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0b0b0b;
+color:white;
+padding-bottom:80px;
+}
+
+.header{
+background:linear-gradient(90deg,#000,#b8860b);
+padding:20px;
+text-align:center;
+border-bottom:3px solid gold;
+}
+
+.logo{
+font-size:34px;
+font-weight:bold;
+color:gold;
+}
+
+.top-icons{
+display:flex;
+justify-content:space-between;
+padding:10px 20px;
+font-size:28px;
+color:gold;
+}
+
+.profile{
+width:80px;
+height:80px;
+border-radius:50%;
+border:3px solid gold;
+display:block;
+margin:15px auto;
+}
+
+.slider{
+width:95%;
+height:170px;
+margin:15px auto;
+border:2px solid gold;
+border-radius:15px;
+overflow:hidden;
+}
+
+.slider img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.notice{
+margin:15px;
+padding:15px;
+background:#181818;
+border:2px solid gold;
+border-radius:10px;
+text-align:center;
+}
+
+.wallet{
+margin:15px;
+padding:20px;
+background:#181818;
+border:2px solid gold;
+border-radius:15px;
+text-align:center;
+}
+
+.wallet h1{
+color:gold;
+font-size:36px;
+}
+
+.games{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+padding:15px;
+}
+
+.game{
+background:#181818;
+border:2px solid gold;
+border-radius:15px;
+padding:20px;
+text-align:center;
+font-size:20px;
+cursor:pointer;
+transition:.3s;
+}
+
+.game:hover{
+transform:scale(1.05);
+}
+
+.btn{
+width:90%;
+display:block;
+margin:15px auto;
+padding:15px;
+background:gold;
+color:black;
+border:none;
+border-radius:12px;
+font-size:18px;
+font-weight:bold;
+}
+
+.support{
+margin:15px;
+padding:20px;
+background:#181818;
+border:2px solid gold;
+border-radius:15px;
+text-align:center;
+}
+
+.bottom{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:#111;
+display:flex;
+justify-content:space-around;
+padding:15px;
+border-top:2px solid gold;
+}
+
+.bottom a{
+color:gold;
+text-decoration:none;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+  <div class="header">
+<h1 class="logo">👑 TASAN WIN</h1>
+<p>Premium Virtual Gaming Platform</p>
+</div>
+
+<div class="top-icons">
+<span>🔔</span>
+<span>👤</span>
+</div>
+
+<img class="profile" src="https://picsum.photos/200" alt="Profile">
+
+<div class="slider">
+<img id="banner" src="https://picsum.photos/900/300?1" alt="Banner">
+</div>
+
+<div class="notice">
+🎉 Welcome to TASAN WIN
+<br><br>
+🎁 Daily Login Bonus : +50 Virtual Points
+</div>
+
+<div class="wallet">
+<h2>💰 Wallet</h2>
+<h1>0 Points</h1>
+</div>
+
+<div class="stats">
+
+<div class="stat-card">
+<h3>👥 Users</h3>
+<p>12,540</p>
+</div>
+
+<div class="stat-card">
+<h3>🎮 Games</h3>
+<p>4</p>
+</div>
+
+<div class="stat-card">
+<h3>🏆 Winners</h3>
+<p>2,450</p>
+</div>
+
+<div class="stat-card">
+<h3>⭐ Rating</h3>
+<p>4.9/5</p>
+</div>
+
+</div>
+
+<div class="vip-banner">
+👑 VIP GOLD MEMBERS GET EXTRA DAILY BONUS
+</div>
+<div class="games">
+
+<div class="game" onclick="location.href='color-game.html'">
+🎨<br><b>Color Game</b>
+</div>
+
+<div class="game" onclick="location.href='slots.html'">
+🎰<br><b>Slots</b>
+</div>
+
+<div class="game" onclick="location.href='aviator.html'">
+✈️<br><b>Aviator</b>
+</div>
+
+<div class="game" onclick="location.href='lucky-spin.html'">
+🎡<br><b>Lucky Spin</b>
+</div>
+
+<div class="game" onclick="location.href='vip.html'">
+👑<br><b>VIP Club</b>
+</div>
+
+<div class="game" onclick="location.href='wallet.html'">
+💰<br><b>Wallet</b>
+</div>
+
+</div>
+
+<div class="notice">
+<marquee>
+🏆 Ravi won +250 Points ⭐ | 🏆 Aman won +100 Points ⭐ | 🏆 Priya won +500 Points ⭐ | 🏆 Rohit won +300 Points ⭐
+</marquee>
+</div>
+
+<div class="support">
+
+<h2>🏆 Latest Winners</h2>
+
+<p>🥇 Ravi — +250 Points</p>
+<p>🥈 Aman — +100 Points</p>
+<p>🥉 Priya — +500 Points</p>
+<p>🏅 Rohit — +300 Points</p>
+
+</div>
+<button class="btn" onclick="location.href='login.html'">
+🔐 LOGIN
+</button>
+
+<button class="btn" onclick="location.href='register.html'">
+📝 REGISTER
+</button>
+
+<div class="support">
+<h2>📞 Customer Support</h2>
+
+<p><b>WhatsApp</b></p>
+<p>📱 9928916103</p>
+
+<br>
+
+<p><b>Telegram Channel</b></p>
+<p>https://t.me/+p5wU7cEtycNhNzhl</p>
+
+<br>
+
+<p>⏰ Support Available 24×7</p>
+</div>
+
+<div class="bottom">
+<a href="index.html">🏠 Home</a>
+<a href="wallet.html">💰 Wallet</a>
+<a href="profile.html">👤 Profile</a>
+<a href="admin.html">⚙️ Admin</a>
+</div>
+<script>
+
+// Daily Bonus Popup
+setTimeout(function(){
+
+alert("🎉 Welcome to TASAN WIN!\n\n🎁 Daily Login Bonus : +50 Virtual Points");
+
+},1000);
+
+// Auto Banner Slider
+
+const banners=[
+"https://picsum.photos/900/300?1",
+"https://picsum.photos/900/300?2",
+"https://picsum.photos/900/300?3",
+"https://picsum.photos/900/300?4"
+];
+
+let bannerIndex=0;
+
+setInterval(function(){
+
+bannerIndex++;
+
+if(bannerIndex>=banners.length){
+bannerIndex=0;
+}
+
+let banner=document.getElementById("banner");
+
+if(banner){
+banner.src=banners[bannerIndex];
+}
+
+},3000);
+
+</script>
+
+<script src="app.js"></script>
+
+</body>
+</html>
