@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TASAN WIN - Slots</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0b0b0b;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+.header{
+background:linear-gradient(90deg,#000,#b8860b);
+padding:20px;
+border-radius:15px;
+color:gold;
+margin-bottom:20px;
+}
+
+.slot-box{
+background:#181818;
+border:2px solid gold;
+border-radius:20px;
+padding:30px;
+margin:20px auto;
+max-width:350px;
+}
+
+#slot{
+font-size:65px;
+letter-spacing:15px;
+margin:20px 0;
+}
+
+.result{
+font-size:24px;
+color:gold;
+margin-top:20px;
+min-height:40px;
+}
+
+.btn{
+width:100%;
+padding:15px;
+margin-top:20px;
+background:gold;
+color:black;
+font-size:18px;
+font-weight:bold;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+<h1>🎰 TASAN WIN SLOTS</h1>
+</div>
+
+<div class="slot-box">
+
+<h2>Try Your Luck</h2>
+
+<div id="slot">
+🍒 🍋 ⭐
+</div>
+
+<div id="result" class="result">
+Press SPIN
+</div>
+
+<button class="btn" onclick="spinSlot()">
+🎰 SPIN NOW
+</button>
+<button class="btn" onclick="location.href='index.html'">
+🏠 HOME
+</button>
+
+</div>
+
+<script>
+
+const items=["🍒","🍋","⭐","💎","7️⃣"];
+
+let spinning=false;
+
+function spinSlot(){
+
+if(spinning) return;
+
+spinning=true;
+
+let count=0;
+
+let spin=setInterval(function(){
+
+let a=items[Math.floor(Math.random()*items.length)];
+let b=items[Math.floor(Math.random()*items.length)];
+let c=items[Math.floor(Math.random()*items.length)];
+
+document.getElementById("slot").innerHTML=a+" "+b+" "+c;
+
+count++;
+
+if(count>=20){
+
+clearInterval(spin);
+
+spinning=false;
+
+if(a===b && b===c){
+
+document.getElementById("result").innerHTML=
+"🏆 JACKPOT! "+a+a+a;
+
+}else{
+
+document.getElementById("result").innerHTML=
+"😔 Try Again";
+
+}
+
+}
+
+},100);
+
+}
+
+</script>
+
+</body>
+</html>
