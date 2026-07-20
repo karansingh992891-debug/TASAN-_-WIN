@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const registerBtn = document.getElementById("registerBtn");
 
     // अगर यूज़र लॉगिन है
-    if (localStorage.getItem("user")) {
+    if(localStorage.getItem("isLoggedIn") === "true"){
 
         if (loginBtn) loginBtn.style.display = "none";
         if (registerBtn) registerBtn.style.display = "none";
