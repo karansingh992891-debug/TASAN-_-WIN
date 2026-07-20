@@ -1,134 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TASAN WIN - Login</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-background:#0b0b0b;
-color:white;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-}
-
-.container{
-width:90%;
-max-width:400px;
-background:#181818;
-border:2px solid gold;
-border-radius:15px;
-padding:25px;
-}
-
-.logo{
-text-align:center;
-font-size:32px;
-color:gold;
-font-weight:bold;
-margin-bottom:20px;
-}
-
-input{
-width:100%;
-padding:15px;
-margin:10px 0;
-border:none;
-border-radius:10px;
-background:#333;
-color:white;
-font-size:16px;
-}
-
-button{
-width:100%;
-padding:15px;
-margin-top:15px;
-background:gold;
-color:black;
-font-size:18px;
-font-weight:bold;
-border:none;
-border-radius:10px;
-cursor:pointer;
-}
-
-button:hover{
-background:#ffd700;
-}
-
-.link{
-text-align:center;
-margin-top:15px;
-}
-
-.link a{
-color:gold;
-text-decoration:none;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div class="container">
-
-<div class="logo">
-👑 TASAN WIN
-</div>
-
-<h2 style="text-align:center;">Login</h2>
-
-<input type="text" id="mobile" placeholder="Enter Mobile Number">
-
-<input type="password" id="password" placeholder="Enter Password">
-<button onclick="loginUser()">
-🔐 LOGIN
-</button>
-
-<div class="link">
-New User?
-<a href="register.html">Register Here</a>
-</div>
-
-<div class="link">
-<a href="index.html">🏠 Back to Home</a>
-</div>
-
-</div>
-
-<script>
-
 function loginUser(){
 
-let mobile=document.getElementById("mobile").value;
-let password=document.getElementById("password").value;
+let mobile = document.getElementById("mobile").value;
+let password = document.getElementById("password").value;
 
 if(mobile=="" || password==""){
-alert("⚠ Please fill all fields");
-return;
+    alert("⚠ Please fill all fields");
+    return;
 }
 
-alert("✅ Login Successful!");
+// Register किया हुआ डेटा निकालो
+let user = JSON.parse(localStorage.getItem("user"));
 
-window.location.href="index.html";
-
+if(!user){
+    alert("❌ Please Register First");
+    return;
 }
 
-</script>
+if(user.mobile===mobile && user.password===password){
 
-</body>
-</html>
+    // Login Session Save
+    localStorage.setItem("isLoggedIn","true");
+
+    alert("✅ Login Successful!");
+    window.location.href="index.html";
+
+}else{
+    alert("❌ Mobile Number or Password Incorrect");
+}
+
+}
